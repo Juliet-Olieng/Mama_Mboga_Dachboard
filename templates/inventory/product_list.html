@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>product table</title>
+</head>
+<body>
+    <h2>Product table/</h2>
+    <table>
+        <th>
+            <td>Name<td/>
+                <td>Decription<td/>
+                <td>Price<td/>
+                    <td>product_detail</td>
+                    <th/>
+                    {%for product in products %}
+                    <tr>
+                        <td>{{product.name}}<td/>
+                            <td>{{product.description}}<td/>
+                                <td>{{product.price}}<td/>
+                                <td> <a href="{% url 'product_detail_view' id=product.id %}">product details</a> </td>
+
+                                    {%csrf_token%}
+                        <tr/>
+                        {% endfor %}
+        
+
+        <table/>
+
+    
+</body>
+</html>
